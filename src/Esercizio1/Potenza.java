@@ -10,4 +10,7 @@ public class Potenza {
     public void pow(){
         System.out.println((int)Math.pow(base,number));
     }
+    public void cambiobase(int newBase){
+        this.base = newBase;
+    }
 }
