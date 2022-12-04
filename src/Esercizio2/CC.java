@@ -84,11 +84,14 @@ public class CC {
     }
 
     public void movimento(){
-        if(log.size()<=5){
+        if(log.size()>0 && log.size()<=5){
             for(int i=0;i<log.size();i++){
                 System.out.println(log.get(i));
                 System.out.println("-------------------------------------------");
             }
+        }
+        else if (log.size()==0){
+            System.out.println("No moviments registered\n-------------------------------------------");
         }
         else{
             for(int i=log.size()-5;i<log.size();i++){
