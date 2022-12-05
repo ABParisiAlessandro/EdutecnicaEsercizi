@@ -1,15 +1,15 @@
-package Esercizio2.controller;
+package Esercizio2.view;
 
-import Esercizio2.CC;
-import Esercizio2.CCExceptions.CcFailedWithdrawException;
-import Esercizio2.CCExceptions.CcNegativeInputException;
+import Esercizio2.model.CCExceptions.CcFailedWithdrawException;
+import Esercizio2.model.CCExceptions.CcNegativeInputException;
+import Esercizio2.controller.CCimpl;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ATM {
     static String placeholder = "AtmPlaceholder";
-    static CC cc1= new CC("IT","60","X","05428","11101","000000123456","A168","BB","CA","187C");
+    static CCimpl CCimpl1 = new CCimpl("IT","60","X","05428","11101","000000123456","A168","BB","CA","187C");
     public static void main(String[] args) {
         boolean exit = false;
         System.out.println("Welcome!");
@@ -31,7 +31,7 @@ public class ATM {
                     Double money = 0.d;
                     try {
                         money = scan.nextDouble();
-                        cc1.withdrawal(money,placeholder);
+                        CCimpl1.withdrawal(money,placeholder);
                         System.out.println("DONE!");
                     }catch (InputMismatchException | CcNegativeInputException | CcFailedWithdrawException e){
                         System.err.println(e.getMessage());
@@ -43,7 +43,7 @@ public class ATM {
                     Double deposit = 0.d;
                     try {
                         deposit = scan.nextDouble();
-                        cc1.deposit(deposit,placeholder);
+                        CCimpl1.deposit(deposit,placeholder);
                         System.out.println("DONE!");
                     }catch (InputMismatchException | CcNegativeInputException e){
                         System.err.println(e.getMessage());
@@ -51,10 +51,10 @@ public class ATM {
 
                     break;
                 case "B":
-                    cc1.saldo();
+                    CCimpl1.saldo();
                     break;
                 case  "M":
-                    cc1.movimento();
+                    CCimpl1.movimento();
                     break;
                 case "Q":
                     System.out.println("Thank you and goodbye!");

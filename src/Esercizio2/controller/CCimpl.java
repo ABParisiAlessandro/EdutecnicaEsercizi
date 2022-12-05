@@ -1,14 +1,15 @@
-package Esercizio2;
+package Esercizio2.controller;
 
-import Esercizio2.CCExceptions.CcFailedWithdrawException;
-import Esercizio2.CCExceptions.CcNegativeInputException;
+import Esercizio2.model.CC;
+import Esercizio2.model.CCExceptions.CcFailedWithdrawException;
+import Esercizio2.model.CCExceptions.CcNegativeInputException;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class CC {
+public class CCimpl implements CC {
     StringBuilder IBAN;
     String national_sign ;
     String cin_eu;
@@ -27,7 +28,7 @@ public class CC {
     Double available_balance;
 
     ArrayList<String> log;
-    public CC(String national_sign, String cin_eu, String cin_code, String abi_code, String cab_code, String cc_number, String swift_bank_code, String country_code, String local_code, String bic_bank_code) {
+    public CCimpl(String national_sign, String cin_eu, String cin_code, String abi_code, String cab_code, String cc_number, String swift_bank_code, String country_code, String local_code, String bic_bank_code) {
         this.national_sign = national_sign;
         this.cin_eu = cin_eu;
         this.cin_code = cin_code;

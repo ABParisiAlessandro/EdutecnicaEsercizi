@@ -1,6 +1,4 @@
-package Esercizio2.CCExceptions;
-
-import Esercizio2.CC;
+package Esercizio2.model.CCExceptions;
 
 public class CcFailedWithdrawException extends  RuntimeException{
     Double balance;

@@ -1,4 +1,4 @@
-package Esercizio2.CCExceptions;
+package Esercizio2.model.CCExceptions;
 
 public class CcNegativeInputException extends Exception{
     @Override
